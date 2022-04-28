@@ -6,12 +6,18 @@ import androidx.room.*
 interface NotesDao {
 
     @Delete
-    fun delete(notes : Notes)
+    suspend fun delete(notes : Notes)
 
     //onConflict = OnConflictStrategy.IGNORE it will not add any repetitive word
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    fun insert(notes: Notes)
+    suspend fun insert(notes: Notes)
 
     @Query("SELECT * from notes_table ORDER by id ASC")
     fun getAllNotes() : List<Notes>
 }
+
+
+
+/*suspend means that particular function will be called from background thread or suspend function
+* the main reason to do this was to not include it in our main thread
+* as insert and delete operations are heavy and if we include it in our main thread, it will make our app laggy*/
