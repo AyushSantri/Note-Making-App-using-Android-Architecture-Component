@@ -6,7 +6,7 @@ import androidx.lifecycle.LiveData
 
 class NoteViewModel(application: Application) : AndroidViewModel(application) {
 
-    private val allNotes : LiveData<List<Notes>>
+    val allNotes : LiveData<List<Notes>>
 
     init {
         val dao = NoteDatabase.getDatabase(application).getNotes()
