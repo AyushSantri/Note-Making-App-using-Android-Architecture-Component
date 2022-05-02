@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="app/src/main/res/drawable/ic_baseline_delete_forever_24.xml" value="0.341" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.35625" />
         <entry key="app/src/main/res/layout/item.xml" value="0.35625" />
         <entry key="app/src/main/res/layout/item_note.xml" value="0.35625" />
       </map>
