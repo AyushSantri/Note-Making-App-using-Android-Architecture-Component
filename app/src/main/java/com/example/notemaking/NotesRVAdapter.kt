@@ -1,5 +1,6 @@
 package com.example.notemaking
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -30,6 +31,14 @@ class NotesRVAdapter(private val listener: INotesRVAdapter) : RecyclerView.Adapt
 
     override fun getItemCount(): Int {
         return allNotes.size
+    }
+
+    @SuppressLint("NotifyDataSetChanged")
+    fun updatedList(newNotes : List<Notes>) {
+        allNotes.clear()
+        allNotes.addAll(newNotes)
+
+        notifyDataSetChanged()
     }
 }
 
