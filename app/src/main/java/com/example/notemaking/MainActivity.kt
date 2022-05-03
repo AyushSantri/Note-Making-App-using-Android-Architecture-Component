@@ -30,6 +30,6 @@ class MainActivity : AppCompatActivity(), INotesRVAdapter {
     }
 
     override fun onItemClicked(notes: Notes) {
-        TODO("Not yet implemented")
+        viewModel.delete(notes)
     }
 }
